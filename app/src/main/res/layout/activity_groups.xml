@@ -14,14 +14,131 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Muscle Groups"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/chestCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <TextView
+        android:id="@+id/chestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:text="Chest"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <TextView
+        android:id="@+id/backText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/title_back"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/backCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="194dp" />
+
+    <TextView
+        android:id="@+id/armsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Arms"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:id="@+id/shoulderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Shoulders"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="259dp" />
+
+    <TextView
+        android:id="@+id/cardioTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Cardio"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="501dp" />
+
+    <CheckBox
+        android:id="@+id/shouldersCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <CheckBox
+        android:id="@+id/armsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <CheckBox
+        android:id="@+id/legsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <CheckBox
+        android:id="@+id/cardioCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="488dp" />
+
+    <TextView
+        android:id="@+id/legsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Legs"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <CheckBox
+        android:id="@+id/backCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="194dp" />
+
 </android.support.constraint.ConstraintLayout>
