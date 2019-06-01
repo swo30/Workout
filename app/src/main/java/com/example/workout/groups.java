@@ -19,7 +19,6 @@ public class groups extends AppCompatActivity {
     private CheckBox shoulderCheckBox ;
     private CheckBox legCheckBox ;
 
-    private boolean oneCheckBox = false;
     public int checkboxMuscleGroups = 0;
 
 
@@ -54,11 +53,11 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|32; //32 is 10 0000
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^32; //32 is 10 0000
+                    nextButtonEnabler();
 
                 }
             }
@@ -68,12 +67,11 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|16; //16 is 01 0000
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^16; //16 is 01 0000
-
+                    nextButtonEnabler();
                 }
             }
         });
@@ -81,12 +79,11 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|8; //8 is 00 1000
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^8; //8 is 00 1000
-
+                    nextButtonEnabler();
                 }
             }
         });
@@ -94,12 +91,11 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|4; //4 is 00 0100
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^4; //4 is 00 0100
-
+                    nextButtonEnabler();
                 }
             }
         });
@@ -107,12 +103,11 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|2; //2 is 00 0010
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^2; //2 is 00 0010
-
+                    nextButtonEnabler();
                 }
             }
         });
@@ -120,19 +115,16 @@ public class groups extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
-                    oneCheckBox = true;
                     checkboxMuscleGroups = checkboxMuscleGroups|1; //1 is 00 0001
+                    nextButtonEnabler();
                 }else{
-                    oneCheckBox = false;
                     checkboxMuscleGroups = checkboxMuscleGroups^1; //1 is 00 0001
+                    nextButtonEnabler();
                 }
             }
         });
 
-        System.out.print(oneCheckBox);
-        if (oneCheckBox) {
-            nextButton.isEnabled();
-        }
+
 
 
     }
@@ -140,6 +132,14 @@ public class groups extends AppCompatActivity {
     public void sliderPage(){
         Intent intent = new Intent(this, slider.class);
         startActivity(intent);
+    }
+
+    public void nextButtonEnabler(){
+        if (checkboxMuscleGroups != 0) {
+            nextButton.setEnabled(true);
+        }else{
+            nextButton.setEnabled(false);
+        }
     }
 
 }
