@@ -18,8 +18,10 @@ public class slider extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slider);
 
-        SeekBar workoutminSeekBar = (SeekBar) findViewById(R.id.workoutminSeekBar);
-        final TextView seekBarValue = (TextView) findViewById(R.id.workoutminText);
+        SeekBar workoutminSeekBar =  findViewById(R.id.workoutminSeekBar);
+        final TextView seekBarValue =  findViewById(R.id.workoutminText);
+        final TextView topText =  findViewById(R.id.topText);
+        final TextView bottomText =  findViewById(R.id.bottomText);
 
 
         RangeBar rangebar = findViewById(R.id.rangebar);
@@ -28,6 +30,15 @@ public class slider extends AppCompatActivity {
         rangebar.setBarWeight(6);
         rangebar.setBarColor(2);
 
+
+
+        rangebar.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onIndexChangeListener(RangeBar rangeBar, int leftThumbIndex, int rightThumbIndex) {
+                topText.setText(String.valueOf(10+leftThumbIndex*10)+" min");
+                bottomText.setText(String.valueOf(10+rightThumbIndex*10)+" min");
+            }
+        });
 
 
         workoutminSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
