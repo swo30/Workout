@@ -18,14 +18,14 @@ public class slider extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slider);
 
+        final int minWorkoutTime = 3; //3 blocks of 10mins aka 3 exercises
         SeekBar workoutminSeekBar =  findViewById(R.id.workoutminSeekBar);
         final TextView seekBarValue =  findViewById(R.id.workoutminText);
         final TextView topText =  findViewById(R.id.topText);
         final TextView bottomText =  findViewById(R.id.bottomText);
 
 
-        RangeBar rangebar = findViewById(R.id.rangebar);
-        rangebar.setTickCount(8);
+        final RangeBar rangebar = findViewById(R.id.rangebar);
         rangebar.setTickHeight(25);
         rangebar.setBarWeight(6);
         rangebar.setBarColor(2);
@@ -35,8 +35,8 @@ public class slider extends AppCompatActivity {
         rangebar.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
             @Override
             public void onIndexChangeListener(RangeBar rangeBar, int leftThumbIndex, int rightThumbIndex) {
-                topText.setText(String.valueOf(10+leftThumbIndex*10)+" min");
-                bottomText.setText(String.valueOf(10+rightThumbIndex*10)+" min");
+                topText.setText(String.valueOf((minWorkoutTime+leftThumbIndex)*10)+" min");
+                bottomText.setText(String.valueOf((minWorkoutTime+rightThumbIndex)*10)+" min");
             }
         });
 
@@ -47,7 +47,8 @@ public class slider extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
                 // TODO Auto-generated method stub
-                seekBarValue.setText(String.valueOf(10+progress*10)+" min");
+                rangebar.setTickCount(progress+minWorkoutTime);
+                seekBarValue.setText(String.valueOf((minWorkoutTime + progress)*10)+" min");
             }
 
             @Override

@@ -18,15 +18,15 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="17"
-        android:progress="9" />
+        android:max="15"
+        android:progress="3" />
 
     <TextView
         android:id="@+id/workoutminText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="90 min"
+        android:text="60 min"
         android:textSize="36sp" />
 
     <com.edmodo.rangebar.RangeBar xmlns:custom="http://schemas.android.com/apk/res-auto"
