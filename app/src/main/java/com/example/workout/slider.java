@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.SeekBar;
 import android.app.Activity;
+import com.edmodo.rangebar.RangeBar;
 
 
 public class slider extends AppCompatActivity {
@@ -19,6 +20,16 @@ public class slider extends AppCompatActivity {
 
         SeekBar workoutminSeekBar = (SeekBar) findViewById(R.id.workoutminSeekBar);
         final TextView seekBarValue = (TextView) findViewById(R.id.workoutminText);
+
+
+        RangeBar rangebar = findViewById(R.id.rangebar);
+        rangebar.setTickCount(8);
+        rangebar.setTickHeight(25);
+        rangebar.setBarWeight(6);
+        rangebar.setBarColor(2);
+
+
+
         workoutminSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
