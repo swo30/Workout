@@ -3,7 +3,6 @@ package com.example.workout;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -19,7 +18,7 @@ public class groups extends AppCompatActivity {
     private CheckBox shoulderCheckBox ;
     private CheckBox legCheckBox ;
 
-    public int checkboxMuscleGroups = 0;
+    private int checkboxMuscleGroups = 0;
 
 
 
@@ -125,8 +124,11 @@ public class groups extends AppCompatActivity {
         });
 
 
+    }
 
-
+    public int getCheckboxMuscleGroups(){
+        System.out.println("GROUPS CLASS CHEBOXAKJDHSBNKJASDN: " + this.checkboxMuscleGroups );
+        return this.checkboxMuscleGroups;
     }
 
     public void sliderPage(){
