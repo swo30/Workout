@@ -29,7 +29,7 @@ public class groups extends AppCompatActivity {
         setContentView(R.layout.groups);
 
 
-        nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton =  findViewById(R.id.nextButton);
 
         chestCheckBox = findViewById(R.id.chestCheckBox);
         backCheckBox = findViewById(R.id.backCheckBox);
@@ -53,6 +53,7 @@ public class groups extends AppCompatActivity {
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
                     checkboxMuscleGroups = checkboxMuscleGroups|32; //32 is 10 0000
+
                     nextButtonEnabler();
                 }else{
                     checkboxMuscleGroups = checkboxMuscleGroups^32; //32 is 10 0000
@@ -127,8 +128,8 @@ public class groups extends AppCompatActivity {
     }
 
     public int getCheckboxMuscleGroups(){
-        System.out.println("GROUPS CLASS CHEBOXAKJDHSBNKJASDN: " + this.checkboxMuscleGroups );
-        return this.checkboxMuscleGroups;
+        System.out.println("GROUPS CLASS 4trwesdfxbctrgdesrgfxctedftrgxcvde: " + checkboxMuscleGroups );
+        return checkboxMuscleGroups;
     }
 
     public void sliderPage(){
