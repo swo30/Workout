@@ -17,22 +17,21 @@ import com.edmodo.rangebar.RangeBar;
 
 public class slider extends AppCompatActivity {
 
-    SeekBar chestSeekBar        =  findViewById(R.id.chestSeekBar   );
-    SeekBar backSeekBar         =  findViewById(R.id.backSeekBar    );
-    SeekBar biSeekBar           =  findViewById(R.id.biSeekBar      );
-    SeekBar triSeekBar          =  findViewById(R.id.triSeekBar     );
-    SeekBar shoulderSeekBar     =  findViewById(R.id.shoulderSeekBar);
-    SeekBar legsSeekBar         =  findViewById(R.id.legsSeekBar    );
-    final TextView chestText    =  findViewById(R.id.chestText      );
-    final TextView backText     =  findViewById(R.id.backText       );
-    final TextView biText       =  findViewById(R.id.biText         );
-    final TextView triText      =  findViewById(R.id.triText        );
-    final TextView shoulderText =  findViewById(R.id.shoulderText   );
-    final TextView legText      =  findViewById(R.id.legText        );
+    SeekBar chestSeekBar   ;
+    SeekBar backSeekBar    ;
+    SeekBar biSeekBar      ;
+    SeekBar triSeekBar     ;
+    SeekBar shoulderSeekBar;
+    SeekBar legsSeekBar    ;
+    TextView chestText     ;
+    TextView backText      ;
+    TextView biText        ;
+    TextView triText       ;
+    TextView shoulderText  ;
+    TextView legsText      ;
 
-    Intent intent = getIntent();
-    String foo = intent.getStringExtra("checkboxMuscleGroups");
-    int checkboxMuscleGroups = Integer.parseInt(foo);
+    Intent intent;
+    int checkboxMuscleGroups;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +39,24 @@ public class slider extends AppCompatActivity {
         setContentView(R.layout.slider);
 
         final int minWorkoutTime = 3; //3 blocks of 10mins aka 3 exercises
+
+        intent = getIntent();
+        checkboxMuscleGroups = Integer.parseInt(intent.getStringExtra("checkboxMuscleGroups"));
+        System.out.println("NIGGER2: " + checkboxMuscleGroups );
+
+
+        chestSeekBar        =  findViewById(R.id.chestSeekBar   );
+        backSeekBar         =  findViewById(R.id.backSeekBar    );
+        biSeekBar           =  findViewById(R.id.biSeekBar      );
+        triSeekBar          =  findViewById(R.id.triSeekBar     );
+        shoulderSeekBar     =  findViewById(R.id.shoulderSeekBar);
+        legsSeekBar         =  findViewById(R.id.legsSeekBar    );
+        chestText           =  findViewById(R.id.chestText      );
+        backText            =  findViewById(R.id.backText       );
+        biText              =  findViewById(R.id.biText         );
+        triText             =  findViewById(R.id.triText        );
+        shoulderText        =  findViewById(R.id.shoulderText   );
+        legsText             =  findViewById(R.id.legsText      );
 
         SeekBar workoutminSeekBar =  findViewById(R.id.workoutminSeekBar);
         final TextView seekBarValue =  findViewById(R.id.workoutminText);
@@ -65,40 +82,34 @@ public class slider extends AppCompatActivity {
     }
 
     public void Load_checkbox() {
-        if (checkboxMuscleGroups == 32) {
-//            chestSeekBar.setVisibility(View.VISIBLE);
-//            chestText.setVisibility(View.VISIBLE);
-            System.out.println("Chest Selected");
+        if ((checkboxMuscleGroups&32) == 32) {
+            chestSeekBar.setVisibility(View.VISIBLE);
+            chestText.setVisibility(View.VISIBLE);
         }
 
-        if (checkboxMuscleGroups == 16) {
-//            backText.setVisibility(View.VISIBLE);
-//            backSeekBar.setVisibility(View.VISIBLE);
-            System.out.println("back Selected");
+        if ((checkboxMuscleGroups&16) == 16) {
+            backText.setVisibility(View.VISIBLE);
+            backSeekBar.setVisibility(View.VISIBLE);
         }
 
-        if (checkboxMuscleGroups == 8) {
-//            biText.setVisibility(View.VISIBLE);
-//            biSeekBar.setVisibility(View.VISIBLE);
-            System.out.println("bis Selected");
+        if ((checkboxMuscleGroups&8) == 8) {
+            biText.setVisibility(View.VISIBLE);
+            biSeekBar.setVisibility(View.VISIBLE);
         }
 
-        if (checkboxMuscleGroups == 4) {
-//            triText.setVisibility(View.VISIBLE);
-//            triSeekBar.setVisibility(View.VISIBLE);
-            System.out.println("tri Selected");
+        if ((checkboxMuscleGroups&4) == 4) {
+            triText.setVisibility(View.VISIBLE);
+            triSeekBar.setVisibility(View.VISIBLE);
         }
 
-        if (checkboxMuscleGroups == 2) {
-//            shoulderText.setVisibility(View.VISIBLE);
-//            shoulderSeekBar.setVisibility(View.VISIBLE);
-            System.out.println("shoulders Selected");
+        if ((checkboxMuscleGroups&2) == 2) {
+            shoulderText.setVisibility(View.VISIBLE);
+            shoulderSeekBar.setVisibility(View.VISIBLE);
         }
 
-        if (checkboxMuscleGroups == 1) {
-//            legText.setVisibility(View.VISIBLE);
-//            legsSeekBar.setVisibility(View.VISIBLE);
-            System.out.println("legs Selected");
+        if ((checkboxMuscleGroups&1) == 1) {
+            legsText.setVisibility(View.VISIBLE);
+            legsSeekBar.setVisibility(View.VISIBLE);
         }
     }
 
@@ -164,7 +175,7 @@ public class slider extends AppCompatActivity {
         legsSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                legText     .setText(String.format("Legs:%d min", (progress+1)*10));
+                legsText     .setText(String.format("Legs:%d min", (progress+1)*10));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}

@@ -131,7 +131,9 @@ public class groups extends AppCompatActivity {
 
     public void sliderPage(){
         Intent intent = new Intent(this, slider.class);
-        intent.putExtra("checkboxMuscleGroups",checkboxMuscleGroups);
+        intent.putExtra("checkboxMuscleGroups",Integer.toString(checkboxMuscleGroups));
+        System.out.println("NIGGER1: " + checkboxMuscleGroups );
+
         //intent.putExtra(this);
         startActivity(intent);
     }
