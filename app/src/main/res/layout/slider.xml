@@ -164,16 +164,5 @@
         android:visibility="gone"
         android:progress="3" />
 
-    <TextView
-        android:id="@+id/emptyText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=""
-        android:textSize="36sp" />
-
-
-
-
 
 </LinearLayout>

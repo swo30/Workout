@@ -42,8 +42,6 @@ public class slider extends AppCompatActivity {
 
         intent = getIntent();
         checkboxMuscleGroups = Integer.parseInt(intent.getStringExtra("checkboxMuscleGroups"));
-        System.out.println("NIGGER2: " + checkboxMuscleGroups );
-
 
         chestSeekBar        =  findViewById(R.id.chestSeekBar   );
         backSeekBar         =  findViewById(R.id.backSeekBar    );
@@ -115,7 +113,6 @@ public class slider extends AppCompatActivity {
 
 
     public void addListeners(){
-
 
         chestSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
