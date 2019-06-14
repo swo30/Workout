@@ -80,27 +80,25 @@
         android:visibility="gone"/>
 
 
-
-
     <TextView
         android:id="@+id/biText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="Biceps time:"
-        android:layout_weight="1"
         android:textSize="36sp"
-        android:visibility="gone"/>
+        android:visibility="invisible" />
 
     <SeekBar
         android:id="@+id/biSeekBar"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="15"
         android:layout_weight="1"
+        android:max="15"
         android:progress="3"
-        android:visibility="gone"/>
+        android:visibility="invisible" />
 
 
     <TextView

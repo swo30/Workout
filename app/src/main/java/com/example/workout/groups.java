@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CheckBox;
 
+
 public class groups extends AppCompatActivity {
     private Button nextButton;
 
@@ -20,26 +21,24 @@ public class groups extends AppCompatActivity {
 
     private int checkboxMuscleGroups = 0;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.groups);
 
+        nextButton          = findViewById(R.id.nextButton      );
 
-        nextButton =  findViewById(R.id.nextButton);
+        chestCheckBox       = findViewById(R.id.chestCheckBox   );
+        backCheckBox        = findViewById(R.id.backCheckBox    );
+        biCheckBox          = findViewById(R.id.biCheckBox      );
+        triCheckBox         = findViewById(R.id.triCheckBox     );
+        shoulderCheckBox    = findViewById(R.id.shoulderCheckBox);
+        legCheckBox         = findViewById(R.id.legCheckBox     );
 
-        chestCheckBox = findViewById(R.id.chestCheckBox);
-        backCheckBox = findViewById(R.id.backCheckBox);
-        biCheckBox = findViewById(R.id.biCheckBox);
-        triCheckBox = findViewById(R.id.triCheckBox);
-        shoulderCheckBox = findViewById(R.id.shoulderCheckBox);
-        legCheckBox = findViewById(R.id.legCheckBox);
+        addListeners();
+    }
 
-
-
+    public void addListeners(){
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,13 +46,11 @@ public class groups extends AppCompatActivity {
             }
         });
 
-
         chestCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(((CompoundButton) view).isChecked()){
                     checkboxMuscleGroups = checkboxMuscleGroups|32; //32 is 10 0000
-
                     nextButtonEnabler();
                 }else{
                     checkboxMuscleGroups = checkboxMuscleGroups^32; //32 is 10 0000
@@ -134,6 +131,8 @@ public class groups extends AppCompatActivity {
 
     public void sliderPage(){
         Intent intent = new Intent(this, slider.class);
+        intent.putExtra("checkboxMuscleGroups",checkboxMuscleGroups);
+        //intent.putExtra(this);
         startActivity(intent);
     }
 
