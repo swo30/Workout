@@ -120,13 +120,6 @@ public class groups extends AppCompatActivity {
                 }
             }
         });
-
-
-    }
-
-    public int getCheckboxMuscleGroups(){
-        System.out.println("GROUPS CLASS 4trwesdfxbctrgdesrgfxctedftrgxcvde: " + checkboxMuscleGroups );
-        return checkboxMuscleGroups;
     }
 
     public void sliderPage(){
@@ -142,5 +135,4 @@ public class groups extends AppCompatActivity {
             nextButton.setEnabled(false);
         }
     }
-
 }

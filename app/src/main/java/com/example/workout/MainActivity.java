@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
     private Button newWorkoutButton;
 
 
@@ -19,10 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTextMessage = findViewById(R.id.message);
 
-
-        newWorkoutButton = (Button) findViewById(R.id.newWorkoutButton);
+        newWorkoutButton = findViewById(R.id.newWorkoutButton);
         newWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
