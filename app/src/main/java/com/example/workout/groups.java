@@ -3,11 +3,11 @@ package com.example.workout;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CheckBox;
+
 
 public class groups extends AppCompatActivity {
     private Button nextButton;
@@ -19,35 +19,32 @@ public class groups extends AppCompatActivity {
     private CheckBox shoulderCheckBox ;
     private CheckBox legCheckBox ;
 
-    public int checkboxMuscleGroups = 0;
-
-
-
+    private int checkboxMuscleGroups = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.groups);
 
+        nextButton          = findViewById(R.id.nextButton      );
 
-        nextButton = (Button) findViewById(R.id.nextButton);
+        chestCheckBox       = findViewById(R.id.chestCheckBox   );
+        backCheckBox        = findViewById(R.id.backCheckBox    );
+        biCheckBox          = findViewById(R.id.biCheckBox      );
+        triCheckBox         = findViewById(R.id.triCheckBox     );
+        shoulderCheckBox    = findViewById(R.id.shoulderCheckBox);
+        legCheckBox         = findViewById(R.id.legCheckBox     );
 
-        chestCheckBox = findViewById(R.id.chestCheckBox);
-        backCheckBox = findViewById(R.id.backCheckBox);
-        biCheckBox = findViewById(R.id.biCheckBox);
-        triCheckBox = findViewById(R.id.triCheckBox);
-        shoulderCheckBox = findViewById(R.id.shoulderCheckBox);
-        legCheckBox = findViewById(R.id.legCheckBox);
+        addListeners();
+    }
 
-
-
+    public void addListeners(){
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sliderPage();
             }
         });
-
 
         chestCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,14 +120,11 @@ public class groups extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
 
     public void sliderPage(){
         Intent intent = new Intent(this, slider.class);
+        intent.putExtra("checkboxMuscleGroups",Integer.toString(checkboxMuscleGroups));
         startActivity(intent);
     }
 
@@ -141,5 +135,4 @@ public class groups extends AppCompatActivity {
             nextButton.setEnabled(false);
         }
     }
-
 }
